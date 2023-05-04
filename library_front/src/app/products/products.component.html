@@ -1,0 +1,13 @@
+<div class="category">
+  <div class="book-list">
+    <ul>
+      <li *ngFor="let book of products">
+        <a >
+          <img src="{{book.imageUrl}}" alt="Book Title 1">
+          <span>{{book.name}}</span>
+          <button class="add-to-cart-button" (click)="addToFavorite(book.id)">Add to cart</button>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

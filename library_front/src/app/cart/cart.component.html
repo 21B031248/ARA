@@ -1,0 +1,34 @@
+<ng-container *ngIf="logged">
+  <div class="bookt-container">
+    <h1 *ngIf="user">{{user.username}}'s books</h1>
+    <table>
+      <thead>
+      <tr>
+        <th>Product name</th>
+        <th>Product image</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let book of cartProducts">
+        <td>{{book.name}}</td>
+        <td><img src="{{book.imageUrl}}" alt="" class ="img"></td>
+        <td><button class="remove-button" (click)="remove(book.id)">Remove</button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</ng-container>
+
+
+<ng-container *ngIf = "!logged">
+  <div class="d1">
+    <div class="d2">
+      <h1> You need to login </h1>
+      <button class = "login" routerLink="/login"> Login</button>
+    </div>
+  </div>
+</ng-container>
+
+
+
